@@ -9,9 +9,9 @@ http://tranquilbase.org:9111
 
 Install
 ==============
-Linux - Copy the contents into ~/.config/calibre/resources/content_server
+Linux - Copy the contents into ```~/.config/calibre/resources/content_server```
 
-Windows - Copy the contents into [install_path]\resources\content_server
+Windows - Copy the contents into ```[install_path]\resources\content_server```
 
 Note
 ==============
