@@ -1,6 +1,9 @@
 <div id="details_{id}" class="details row">
-    <div class='col-xs-12'>
+    <div class='col-xs-12 col-md-5'>
         <a href="{get_url}" title="Click to read {title} in the {fmt} format" class="details_thumb"><img class='bookimage img-polaroid' alt="Cover of {title}" src="{prefix}/get/cover/{id}" /></a>
+    </div>
+    <div class='col-xs-12 col-md-7'>
+        <div class='title'><h3>{title}</strong></h3>
         {random}
         <div class="field formats">{formats}</div>
         {fields}

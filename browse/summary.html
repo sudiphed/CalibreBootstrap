@@ -1,20 +1,34 @@
 <div id="summary_{id}" class="summary well">
-    <div class="left">
-        <a href="{get_url}" class="summary_thumb" title="Click to read {title} in the {fmt} format"><img alt="Cover of {title}" src="{prefix}/get/thumb_90_120/{id}" class="img-polaroid"/></a>
-        {get_button}
-    </div>
-    <div class="right">
-        <div class="stars">
-            <span class="rating_container">{stars}</span>
-            <span class="series">{series}</span>
-            <a class='btn btn-small btn-info details' href="#" title="{details_tt}">{details}</a>
-            <a class='btn btn-small btn-default' href="{prefix}/browse/book/{id}" title="{permalink_tt}">{permalink}</a>
+    <div class='row'>
+        <div class='col-sm-2 pull-center'>
+            <a href="{get_url}" class="summary_thumb" title="Click to read {title} in the {fmt} format"><img alt="Cover of {title}" src="{prefix}/get/thumb_90_120/{id}" class="img-polaroid"/></a>
+            <p style='margin: 10px 0 0'>
+                {get_button}
+                </p>
         </div>
-        <div class="title"><strong>{title}</strong></div>
-        <div class="authors">{authors}</div>
-        <article class="comments">{comments}</article>
-        <div class="tags">{tags}</div>
-        <div class="formats">{other_formats}</div>
+        <div class="col-sm-10">
+            <div class='row'>
+                <div class='col-xs-9'>
+                    <div class="title"><strong>{title}</strong></div>
+                </div>
+                <div class='col-sm-3 text-right'>
+                    <div class="stars">
+                        <span class="rating_container">{stars}</span>
+                        <span class="series">{series}</span>
+                    </div>
+                </div>
+                <div class='col-xs-12 text-right'>
+                    <a class='btn btn-small btn-info details' href="#" title="{details_tt}">{details}</a>
+                    <a class='btn btn-small btn-default' href="{prefix}/browse/book/{id}" title="{permalink_tt}">{permalink}</a>
+                </div>
+                <div class='col-sm-12'>
+                    <div class="authors">{authors}</div>
+                    <article class="comments">{comments}</article>
+                    <div class="tags">{tags}</div>
+                    <div class="formats">{other_formats}</div>
+                </div>
+            </div>
+        </div>
+        <div class="details-href" title="{details_href}" style="display:none"></div>
     </div>
-    <div class="details-href" title="{details_href}" style="display:none"></div>
 </div>

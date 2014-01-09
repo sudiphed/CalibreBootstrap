@@ -7,7 +7,7 @@ $(document).ready(function() {
 $sort_combobox = $("#sort_combobox");
 
 // Beautify our buttons
-$(".ui-button").button().addClass("btn");
+$(".ui-button, .read").button().addClass("btn");
 $(".navlink, .navleft a, .navright a").button().addClass("btn btn-primary btn-small");
 
 // Goto the first page
@@ -331,7 +331,7 @@ function show_details(a_dom) {
     var bd_title = $("#modal_book_title");
     bd_title.html(book.find(".title").text());
     bd.modal('show');
-    bd_body.html('<span class="loading"><img src="'+url_prefix+'/static/loading.gif" alt="Loading" />Loading, please wait&hellip;</span>');
+    bd_body.html('<span class="loading pull-center"><img src="'+url_prefix+'/static/loading.gif" alt="Loading" />Loading, please wait&hellip;</span>');
     /*bd.dialog('option', 'width', $(window).width() - 100);
       bd.dialog('option', 'height', $(window).height() - 100);
       bd.dialog('option', 'title', book.find('.title').text());
@@ -411,19 +411,18 @@ function load_page(elem) {
         timeout: 600000, //milliseconds (10 minutes)
         data: {'ids': ids},
         error: function(xhr, stat, err) {
-            this.children(".loaded").html(render_error(stat));
-            this.children(".loaded").show();
+            this.children(".loaded").html(render_error(stat)).show();
             this.children(".loading").hide();
         },
         success: function(data) {
-            this.children(".loaded").html(data);
+            this.children(".loaded").html(data).fadeIn(1000);
             this.find(".left a.read").button();
             this.children(".loading").hide();
             this.parent().find('.navmiddle .start').html(this.find('.load_data .start').attr('title'));
             this.parent().find('.navmiddle .end').html(this.find('.load_data .end').attr('title'));
-            this.children(".loaded").fadeIn(1000);
             goto_page();
-            $('article').readmore();
+            this.find('article').readmore();
+            this.find(".ui-button, .read").button().addClass("btn btn-default");
         }
     });
     $("#booklist .page:visible").hide();
