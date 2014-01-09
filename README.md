@@ -9,7 +9,7 @@ http://tranquilbase.org:9111
 
 Install
 ==============
-Copy the contents into ~/.config/calibre/
+Copy the contents into ~/.config/calibre/resources/content_server
 
 Note
 ==============
