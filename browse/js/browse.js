@@ -322,6 +322,7 @@ function load_page(elem) {
             this.parent().find('.navmiddle .end').html(this.find('.load_data .end').attr('title'));
             this.children(".loaded").fadeIn(1000);
 	    goto_page();
+    $('article').readmore();
         }
     });
     $("#booklist .page:visible").hide();
