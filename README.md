@@ -9,9 +9,11 @@ http://tranquilbase.org:9111
 
 Install
 ==============
-Copy the contents into ~/.config/calibre/resources/content_server
+Linux - Copy the contents into ~/.config/calibre/resources/content_server
+Windows - Copy the contents into [install_path]\resources\content_server
 
 Note
 ==============
-I don't know if this will work for anything except linux and it's not heavily tested.
+A lot of the markup is outside of my control (generated within the Calibre python binary) and it's either not possible or too much work to alter it.  Bootstrap3
+ cannot be fully taken advantage of because of that.
 
