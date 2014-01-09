@@ -3,6 +3,8 @@ CalibreBootstrap
 
 Bootstrap template for the Calibre Content Server
 
+Uses [Bootstrap3](http://getbootstrap.com/) and [Font-Awesome] (http://fontawesome.io/)
+
 Demo
 ================
 http://tranquilbase.org:9111
