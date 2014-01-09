@@ -26,107 +26,105 @@
             var sort_cookie_name = "{sort_cookie_name}";
             var sort_select_label = "{sort_select_label}";
             var url_prefix = "{prefix}";
-            $(document).ready(function() {{
-                    init();
-                    {script}
-                    }});
-</script>
+            var script = "{script}";
+        </script>
 
-<!-- NAVBAR -->
-<div class='container'>
-<nav id="top-navigation" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="navbar-header">
-        <button id="menu-mobile" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <!-- LOGO COMES HERE -->
-        <a class="navbar-brand" href="#"><i class='fa fa-book'></i> Calibre</a>
-    </div>
-    <!-- NAV ITEMS START -->
-    <div class="collapse navbar-collapse" id="navbar-collapse-1">
-        <ul class="nav navbar-nav">
-            <li><a href="{prefix}/browse" title="Return to top level"><i class='fa fa-home'></i> {home}</a></li>
-            <li><a id="nav-mobile" href="{prefix}/mobile" title="A version of this website suited for mobile browsers"><i class='fa fa-mobile'></i> Mobile</a></li>
+        <!-- NAVBAR -->
+        <div class='container'>
+            <nav id="top-navigation" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button id="menu-mobile" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- LOGO COMES HERE -->
+                <a class="navbar-brand" href="#"><i class='fa fa-book'></i> Calibre</a>
+            </div>
+            <!-- NAV ITEMS START -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="{prefix}/browse" title="Return to top level"><i class='fa fa-home'></i> {home}</a></li>
+                    <li><a id="nav-mobile" href="{prefix}/mobile" title="A version of this website suited for mobile browsers"><i class='fa fa-mobile'></i> Mobile</a></li>
 
-            <li><a id="nav-demo" href="{prefix}/old" title="The old version of this website"><i class='fa fa-list'></i> Old</a></li>
-            <li><a id="nav-download" href="{prefix}/opds" title="An OPDS feed based version of this website, used in special purpose applications"><i class='fa fa-rss'></i> Feed</a></li>
-            <li class='dropdown sortby hide' id='sort_combobox_container'>
-            <a href='#' data-toggle='dropdown' data-target='#' id='sortdrop'>Sort By <b class='caret'></b></a>
-            <ul class='dropdown-menu' role='menu' aria-labelledby='sortdrop'>
-                <li role='menuitem'>
-                <form class='navbar-form pull-left'>
-                    <select id="sort_combobox">
-                        {sort_select_options}
-                    </select>
-                </form>
-                </li>
-            </ul>
-            </li>
-            <form class="navbar-form navbar-right" name="search_form"  action="{prefix}/browse/search" method="get" accept-charset="UTF-8">
-                <div class="input-group" style='width:75px'>
-                    <span class="input-group-addon btn" type="submit"><i class='fa fa-search'></i></span>
-                    <input value="{initial_search}" placeholder="Search" type="text" title="Search" name="query" class="search_query" style='line-height:2'/>
+                    <li><a id="nav-demo" href="{prefix}/old" title="The old version of this website"><i class='fa fa-list'></i> Old</a></li>
+                    <li><a id="nav-download" href="{prefix}/opds" title="An OPDS feed based version of this website, used in special purpose applications"><i class='fa fa-rss'></i> Feed</a></li>
+                    <li class='dropdown sortby hide' id='sort_combobox_container'>
+                    <a href='#' data-toggle='dropdown' data-target='#' id='sortdrop'>Sort By <b class='caret'></b></a>
+                    <ul class='dropdown-menu' role='menu' aria-labelledby='sortdrop'>
+                        <li role='menuitem'>
+                        <form class='navbar-form pull-left'>
+                            <select id="sort_combobox">
+                                {sort_select_options}
+                            </select>
+                        </form>
+                        </li>
+                    </ul>
+                    </li>
+                    <form class="navbar-form navbar-right" name="search_form"  action="{prefix}/browse/search" method="get" accept-charset="UTF-8">
+                        <div class="input-group" style='width:75px'>
+                            <span class="input-group-addon btn" type="submit"><i class='fa fa-search'></i></span>
+                            <input value="{initial_search}" placeholder="Search" type="text" title="Search" name="query" class="search_query" style='line-height:2'/>
+                        </div>
+                    </form>
+                </ul>
+                <ul class='nav navbar-nav navbar-right' style='margin-right:0px'>
+                    <li>
+                    <form id="donate" action="https://www.paypal.com/cgi-bin/webscr"
+                        method="post" title="Donate to support the development of calibre">
+                        <div>
+                            <input type="hidden" name="cmd" value="_s-xclick"></input>
+                            <input type="hidden" name="hosted_button_id" value="MZQCP8EESW4H4"></input>
+                            <input type="image"
+                            src="{prefix}/static/images/button-donate.png"
+                            width="120px"
+                            name="submit"></input>
+                        </div>
+                    </form>
+                    </li>
+                    <li>
+                    <div id="calibre-home-link" title="Go to the calibre website"></div>
+                    </li>
+                </ul>
+            </div>
+            <!-- End header -->
+            </nav>
+        </div>
+
+        <div id="main" class='container'>
+            {main}
+        </div>
+        <div id="footer">
+            [{library_path}]
+        </div>
+
+        <div id="book_details_dialog" class='modal fade'>
+            <div class='modal-dialog'>
+                <div class='modal-content'>
+                    <div class='modal-header'>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3>
+                            <span id='modal_book_title'></span>
+                        </h3>
+                    </div>
+                    <div class='modal-body'>
+                    </div>
+                    <div class='modal-footer'>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
-            </form>
-        </ul>
-        <ul class='nav navbar-nav navbar-right' style='margin-right:0px'>
-            <li>
-            <form id="donate" action="https://www.paypal.com/cgi-bin/webscr"
-                method="post" title="Donate to support the development of calibre">
-                <div>
-                    <input type="hidden" name="cmd" value="_s-xclick"></input>
-                    <input type="hidden" name="hosted_button_id" value="MZQCP8EESW4H4"></input>
-                    <input type="image"
-                    src="{prefix}/static/images/button-donate.png"
-                    width="120px"
-                    name="submit"></input>
-                </div>
-            </form>
-            </li>
-            <li>
-            <div id="calibre-home-link" title="Go to the calibre website"></div>
-            </li>
-        </ul>
-    </div>
-    <!-- End header -->
-</nav>
-</div>
-
-<div id="main" class='container'>
-    {main}
-</div>
-<div id="footer">
-    [{library_path}]
-</div>
-</div>
-    </div>
-    <div id="book_details_dialog" class='modal hide fade'>
-        <div class='modal-header'>
-            <h3>
-                <span id='modal_book_title'></span>
-            </h3>
+            </div>
         </div>
-        <div class='modal-body'>
+        <div id="goto_page_dialog" class='modal hide fade'>
+            <div class='modal-header'>
+                <h3><span class='modal-title'></span></h3>
+            </div>
+            <div class='modal-body'>
+            </div>
+            <div class='modal-footer'>
+                <a href='#' class="btn" data-dismiss="modal" aria-hidden="true">Close</a>
+            </div>
         </div>
-        <div class='modal-footer'>
-            <a href='#' class="btn" data-dismiss="modal" aria-hidden="true">Close</a>
-        </div>
-    </div>
 
-</div>
-<div id="goto_page_dialog" class='modal hide fade'>
-    <div class='modal-header'>
-        <h3><span class='modal-title'></span></h3>
-    </div>
-    <div class='modal-body'>
-    </div>
-    <div class='modal-footer'>
-        <a href='#' class="btn" data-dismiss="modal" aria-hidden="true">Close</a>
-    </div>
-</div>
-
-    </div>
-</body>
+    </body>
 </html>

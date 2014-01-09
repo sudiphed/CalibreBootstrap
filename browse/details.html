@@ -1,9 +1,7 @@
-<div id="details_{id}" class="details">
-    <div class="left">
-        <a href="{get_url}" title="Click to read {title} in the {fmt} format" class="details_thumb"><img class='img-polaroid' alt="Cover of {title}" src="{prefix}/get/cover/{id}" /></a>
+<div id="details_{id}" class="details row">
+    <div class='col-xs-12'>
+        <a href="{get_url}" title="Click to read {title} in the {fmt} format" class="details_thumb"><img class='bookimage img-polaroid' alt="Cover of {title}" src="{prefix}/get/cover/{id}" /></a>
         {random}
-    </div>
-    <div class="right well well-small">
         <div class="field formats">{formats}</div>
         {fields}
         {comments}

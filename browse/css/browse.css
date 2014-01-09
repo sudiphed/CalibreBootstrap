@@ -1,3 +1,6 @@
+html,body {
+    height: 100%;
+}
 body {
     overflow: -moz-scrollbars-vertical;
     overflow-y: scroll;
@@ -45,14 +48,9 @@ span.label {
     margin-top: 50px !important;
 }
 
-#book_details_dialog {
-    width: 700px; 
-    margin-left:  -350px !important; 
+#book_details_dialog .modal-dialog{
+    width: 750px;
 } 
-
-#book_details_dialog .modal-body {
-    max-height: 400px;
-}
 
 .navbar-inner {
     height: 40px;
@@ -187,7 +185,6 @@ ul {
 
 #booklist div.left {
     float: left;
-    height: 190px;
     width: 100px;
     vertical-align: middle;
     text-align: center;
@@ -355,7 +352,8 @@ ul {
 }
 
 .details .right {
-    overflow: auto;
+overflow-y: scroll;
+height: 400px;
 }
 
 .details .formats {
@@ -367,10 +365,10 @@ ul {
     margin-bottom: 0.5em;
 }
 
-.details .comment {
-    margin-left: 1em;
-    overflow: auto;
-    max-height: 50%;
+#book_details_dialog .bookimage {
+    float:left;
+    padding-right: 20px;
+    padding-bottom: 20px;
 }
 
 .details a.details_thumb img {
