@@ -98,6 +98,9 @@ ul {
     display: inline;
     width: 250px;
     overflow: hidden;
+color: #333333;
+background-color: #ffffff;
+border:1px solid #ddd;
 }
 
 .toplevel li a { text-decoration: none; }
@@ -108,7 +111,8 @@ ul {
 }
 
 .toplevel li:hover {
-    background-color: rgb(162, 200, 221);
+    /*background-color: rgb(162, 200, 221);*/
+    background-color: #eee;
     font-weight: bold;
     /*
     -moz-box-shadow: 5px 5px 5px #ccc;
