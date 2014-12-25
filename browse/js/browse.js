@@ -186,28 +186,25 @@ function category() {
     //$g.find(".loading,.loaded").addClass("hide");
     $g.find("h3").each(function() {
         $(this).addClass("accordion-heading").button();
-        $(this).next("div").addClass("accordion-inner").collapse('hide');
+        $(this).next("div").addClass("accordion-inner collapse");
         $(this).on("click", function(event, ui) {
             var $t = $(this),
             $c = $t.next("div");
-        $c.collapse('toggle');
-        var href = $t.find("a.load_href").attr('href');
-        if (href) {
-            $.ajax({
-                url:href,
-                cache: false,
-                data:{'sort':cookie(sort_cookie_name)},
-                success: function(data) {
-                    $c.find(".loaded").html(data).removeClass('hide').show();
-                    $c.find(".loading").addClass('hide');
-                }
-            });
-        }
-
-
-        event.preventDefault();
-        return false;
-
+            $c.collapse('toggle');
+            var href = $t.find("a.load_href").attr('href');
+            if (href) {
+                $.ajax({
+                    url:href,
+                    cache: false,
+                    data:{'sort':cookie(sort_cookie_name)},
+                    success: function(data) {
+                        $c.find(".loaded").html(data).removeClass('hide').show();
+                        $c.find(".loading").addClass('hide');
+                    }
+                });
+            }
+            event.preventDefault();
+            return false;
         });
     });
     /*
