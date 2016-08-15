@@ -10,7 +10,7 @@
 
         <link rel="stylesheet" type="text/css" href="{prefix}/static/browse/css/browse.css" />
         <link rel="stylesheet" type="text/css" href="{prefix}/static/css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="{prefix}/static/css/font-awesome.css" />
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
         <link rel="apple-touch-icon" href="{prefix}/static/images/calibre.png" />
 
         <script type="text/javascript" src="{prefix}/static/js/jquery.js"></script>
@@ -39,16 +39,18 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- LOGO COMES HERE -->
-                <a class="navbar-brand" href="#"><i class='fa fa-book'></i> Calibre</a>
+                <a class="navbar-brand" href="#">
+                    <div class='brand'><img src="{prefix}/static/images/calibre-icon.png"></div>
+                </a>
             </div>
             <!-- NAV ITEMS START -->
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="{prefix}/browse" title="Return to top level"><i class='fa fa-home'></i> {home}</a></li>
-                    <li><a id="nav-mobile" href="{prefix}/mobile" title="A version of this website suited for mobile browsers"><i class='fa fa-mobile'></i> Mobile</a></li>
+                    <li><a href="{prefix}/browse" title="Return to top level"><i class='fa fa-home'></i><span>{home}</span></a></li>
+                    <li><a id="nav-mobile" href="{prefix}/mobile" title="A version of this website suited for mobile browsers"><i class='fa fa-mobile'></i><span>Mobile</span></a></li>
 
-                    <li><a id="nav-demo" href="{prefix}/old" title="The old version of this website"><i class='fa fa-list'></i> Old</a></li>
-                    <li><a id="nav-download" href="{prefix}/opds" title="An OPDS feed based version of this website, used in special purpose applications"><i class='fa fa-rss'></i> Feed</a></li>
+                    <li><a id="nav-demo" href="{prefix}/old" title="The old version of this website"><i class='fa fa-history'></i><span>Old</span></a></li>
+                    <li><a id="nav-download" href="{prefix}/opds" title="An OPDS feed based version of this website, used in special purpose applications"><i class='fa fa-rss'></i><span>Feed</span></a></li>
                     <li class='dropdown sortby hide' id='sort_combobox_container'>
                     <a href='#' data-toggle='dropdown' data-target='#' id='sortdrop'>Sort By <b class='caret'></b></a>
                     <ul class='dropdown-menu' role='menu' aria-labelledby='sortdrop'>
@@ -61,15 +63,14 @@
                         </li>
                     </ul>
                     </li>
+                    <li class='input'>
                     <form class="navbar-form navbar-right" name="search_form"  action="{prefix}/browse/search" method="get" accept-charset="UTF-8">
-                        <div class="input-group" style='width:75px'>
-                            <span class="input-group-addon btn" type="submit"><i class='fa fa-search'></i></span>
                             <input value="{initial_search}" placeholder="Search" type="text" title="Search" name="query" class="search_query" style='line-height:2'/>
-                        </div>
                     </form>
+                    </li>
                 </ul>
-                <ul class='nav navbar-nav navbar-right' style='margin-right:0px'>
-                    <li>
+                <ul class='nav navbar-nav navbar-right' style='margin-right:0px;width:120px;'>
+                    <li style='background-color:transparent'>
                     <form id="donate" action="https://www.paypal.com/cgi-bin/webscr"
                         method="post" title="Donate to support the development of calibre">
                         <div>
