@@ -127,23 +127,23 @@ window.location.reload();
 }
 */
 
-// }}}
+    // }}}
 
-function init() {
-    //init_sort_combobox();
-    $("#search_box input:submit").button();
-}
-
-// Top-level feed {{{
-
-function toplevel_layout() {
-    var last = $(".toplevel li").last();
-    var title = $('.toplevel h3').first();
-    if (title && title.position()) {
-        var bottom = last.position().top + last.height() - title.position().top;
-        $("#main").height(Math.max(200, bottom+75));
+    function init() {
+        //init_sort_combobox();
+        $("#search_box input:submit").button();
     }
-}
+
+    // Top-level feed {{{
+
+    function toplevel_layout() {
+        var last = $(".toplevel li").last();
+        var title = $('.toplevel h3').first();
+        if (title && title.position()) {
+            var bottom = last.position().top + last.height() - title.position().top;
+            $("#main").height(Math.max(200, bottom+75));
+        }
+    }
 
     function toplevel() {
         $(".sort_select").hide();
@@ -244,61 +244,61 @@ this.children(".loading").hide();
 }
 }
 });*/
-}
-// }}}
-
-// Booklist {{{
-
-function first_page() {
-    load_page($("#booklist #page0"));
-}
-
-function last_page() {
-    load_page($("#booklist .page").last());
-}
-
-function next_page() {
-    var elem = $("#booklist .page:visible").next('.page');
-    if (elem.length > 0) load_page(elem);
-    else first_page();
-}
-
-function previous_page() {
-    var elem = $("#booklist .page:visible").prev('.page');
-    if (elem.length > 0) load_page(elem);
-    else last_page();
-}
-
-function goto_page_old() {
-    var gp = $('#goto_page_dialog');
-    var gp_body = gp.find(".modal-body");
-    var pl = $('#booklist > #pagelist');
-    pl.find("li").each(function() {
-        alert($(this).find("a").attr("title"));
-    });
-    gp.find(".modal-title").html(pl.attr('title'));
-    gp_body.html(pl.html());
-    /*
-       gp.dialog('option', 'title', pl.attr('title'));
-       gp.dialog('option', 'height', $(window).height() - 100);
-       gp.dialog('open');
-       */
-    gp.modal('show');
-
-}
-
-
-function hidesort() {$("#content > .sort_select").hide();}
-
-function booklist(hide_sort) {
-    if (hide_sort) hidesort();
-    var test = $("#booklist #page0").html();
-    if (!test) {
-        $("#booklist").html(render_error("No books found"));
-        return;
     }
-    /*
-       $("#book_details_dialog").dialog({
+    // }}}
+
+    // Booklist {{{
+
+    function first_page() {
+        load_page($("#booklist #page0"));
+    }
+
+    function last_page() {
+        load_page($("#booklist .page").last());
+    }
+
+    function next_page() {
+        var elem = $("#booklist .page:visible").next('.page');
+        if (elem.length > 0) load_page(elem);
+        else first_page();
+    }
+
+    function previous_page() {
+        var elem = $("#booklist .page:visible").prev('.page');
+        if (elem.length > 0) load_page(elem);
+        else last_page();
+    }
+
+    function goto_page_old() {
+        var gp = $('#goto_page_dialog');
+        var gp_body = gp.find(".modal-body");
+        var pl = $('#booklist > #pagelist');
+        pl.find("li").each(function() {
+            alert($(this).find("a").attr("title"));
+        });
+        gp.find(".modal-title").html(pl.attr('title'));
+        gp_body.html(pl.html());
+        /*
+           gp.dialog('option', 'title', pl.attr('title'));
+           gp.dialog('option', 'height', $(window).height() - 100);
+           gp.dialog('open');
+           */
+        gp.modal('show');
+
+    }
+
+
+    function hidesort() {$("#content > .sort_select").hide();}
+
+    function booklist(hide_sort) {
+        if (hide_sort) hidesort();
+        var test = $("#booklist #page0").html();
+        if (!test) {
+            $("#booklist").html(render_error("No books found"));
+            return;
+        }
+        /*
+           $("#book_details_dialog").dialog({
 autoOpen: false,
 modal: true,
 show: 'slide'
@@ -310,23 +310,24 @@ show: 'slide'
 });
 */
 
-first_page(); 
-}
-
-function search_result() {
-    var test = $("#booklist #page0").html();
-    if (!test) {
-        $("#booklist").html("No books found matching this query");
-        return;
+        first_page(); 
     }
-    booklist();
-}
+
+    function search_result() {
+        var test = $("#booklist #page0").html();
+        if (!test) {
+            $("#booklist").html("No books found matching this query");
+            return;
+        }
+        booklist();
+    }
 
     function show_details(a_dom) {
         var book = $(a_dom).closest('div.summary');
         var bd = $('#book_details_dialog');
         var bd_body = bd.find(".modal-body");
         var bd_title = $("#modal_book_title");
+
         bd_title.html(book.find(".title").text());
         bd.modal('show');
         bd_body.html('<div class="loading spinner"> <div class="double-bounce1"></div> <div class="double-bounce2"></div> </div>');
@@ -422,9 +423,10 @@ function load_page(elem) {
             goto_page();
             this.find('article').readmore({
                 moreLink: "<a href='#' class='readMore'>Read More</a>",
-                lessLink: "<a href='#' class='readMore'>Read Less</a>"
+                lessLink: "<a href='#' class='readMore'>Read Less</a>",
+                collapsedHeight:190,
             });
-            this.find(".ui-button, .read").button().addClass("btn btn-block btn-primary");
+            this.find(".ui-button, .read").button().addClass("btn btn-block btn-primary").html("Download");
             $.each(this.find("img"), function(i) {
                 var src = $(this).attr("src").replace("90_120","180_240");
                 $(this).attr("src", src);

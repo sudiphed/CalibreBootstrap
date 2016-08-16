@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>..:: calibre {library} ::.. {title}</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=100" />
+        <title>Calibre {library} | {title}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <link rel="icon" type="image/x-icon" href="http://calibre-ebook.com/favicon.ico" />
 
         <link rel="stylesheet" type="text/css" href="{prefix}/static/browse/css/browse.css" />
@@ -31,7 +30,7 @@
 
         <!-- NAVBAR -->
         <div class='container'>
-            <nav id="top-navigation" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+            <nav id="top-navigation" class="navbar navbar-default navbar-inverse navbar-fixed-top">
             <div class="navbar-header">
                 <button id="menu-mobile" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -40,7 +39,7 @@
                 </button>
                 <!-- LOGO COMES HERE -->
                 <a class="navbar-brand" href="#">
-                    <div class='brand'><img src="{prefix}/static/images/calibre-icon.png"></div>
+                    <div class='brand'><img src="{prefix}/static/images/calibre-icon.png" alt="Calibre Logo"></div>
                 </a>
             </div>
             <!-- NAV ITEMS START -->
@@ -74,12 +73,13 @@
                     <form id="donate" action="https://www.paypal.com/cgi-bin/webscr"
                         method="post" title="Donate to support the development of calibre">
                         <div>
-                            <input type="hidden" name="cmd" value="_s-xclick"></input>
-                            <input type="hidden" name="hosted_button_id" value="MZQCP8EESW4H4"></input>
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="MZQCP8EESW4H4">
                             <input type="image"
+                            alt="Donate"
                             src="{prefix}/static/images/button-donate.png"
-                            width="120px"
-                            name="submit"></input>
+                            width="120"
+                            name="submit">
                         </div>
                     </form>
                     </li>
@@ -118,7 +118,7 @@
         </div>
         <div id="goto_page_dialog" class='modal hide fade'>
             <div class='modal-header'>
-                <h3><span class='modal-title'></span></h3>
+                <h3><span class='modal-title'>Title</span></h3>
             </div>
             <div class='modal-body'>
             </div>
