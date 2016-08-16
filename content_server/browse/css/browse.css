@@ -4,11 +4,11 @@ html,body {
 body {
     overflow: -moz-scrollbars-vertical;
     overflow-y: scroll;
-    padding-top: 75px;
     background-color: #fffcf2;
     margin: 0 0 0 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    padding-top:100px;
 }
 
 .btn {
@@ -69,7 +69,6 @@ border:0px;
     left: 0px;
     top: 0px;
     height: 100%;
-    width:75px;
     background-color:rgba(70, 70, 70, 0.6);
 }
 .navbar-header a.navbar-brand {
@@ -128,6 +127,11 @@ h3 {
     font-size:10px;
 }
 
+@media (min-width: 768px) {
+    .navbar-brand img {
+        width:75px;
+    }
+}
 @media (min-width: 768px) {
 .navbar-nav > li > a {
     padding-top: 5px !important;
@@ -202,16 +206,15 @@ span.label {
 ul {
     list-style-type: none;
 }
-#book_details_dialog .field.formats:before {
+.field.formats:before {
             font-family: FontAwesome;
                 content: "\f019";
                     padding-right:5px;
                 }
 
-#book_details_dialog .field.formats {
+.field.formats {
     font-size:18px;
     font-weight:bold;
-    border-bottom: 1px solid #2f2f2f;
 }
 #book_details_dialog .title h3 {
     display: none;

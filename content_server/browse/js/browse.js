@@ -1,5 +1,11 @@
 $(document).ready(function() {
     eval(script);
+    $('article').readmore({
+        moreLink: "<a href='#' class='readMore'>Read More</a>",
+        lessLink: "<a href='#' class='readMore'>Read Less</a>",
+        collapsedHeight:190,
+    });
+
     init();
     $(".loading").html('<div class="loading spinner"> <div class="bounce1"></div> <div class="bounce2"></div><div class="bounce3"></div></div>');
 
