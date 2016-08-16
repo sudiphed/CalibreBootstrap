@@ -201,6 +201,9 @@ span.label {
 ul {
     list-style-type: none;
 }
+article {
+    padding:10px 0px 20px 20px;
+}
 .toplevel ul {
     list-style-type: none;
     margin: 0;
@@ -208,35 +211,25 @@ ul {
     margin-left: auto;
     margin-right: auto;
     display: block;
-}
-
-.toplevel li {
-    margin: 0.75em;
-    padding: 0.75em;
-    cursor: pointer;
-    font-size: larger;
-    float: left;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    display: inline;
-    width: 250px;
-    overflow: hidden;
-color: #333333;
-background-color: #ffffff;
-border:1px solid #ddd;
+    text-align:center;
 }
 
 .toplevel li a { text-decoration: none; }
 
 .toplevel li img {
     vertical-align: middle;
-    margin-right: 1em;
 }
 
+.toplevel li span {
+display:block;
+text-transform:uppercase;
+font-size:10px;
+padding:10px;
+color: #eee;
+}
 .toplevel li:hover {
     /*background-color: rgb(162, 200, 221);*/
-    background-color: #eee;
+    background-color: #666;
     font-weight: bold;
     /*
     -moz-box-shadow: 5px 5px 5px #ccc;
@@ -351,9 +344,39 @@ border:1px solid #ddd;
     display: block;
 }
 
-#booklist .title {
-    font-size: larger;
+#booklist .authors, article {
+    color:#696969;
 }
+
+#booklist .title {
+    font-size: 20px;
+    text-decoration:underline;
+    font-family:Georgia;
+}
+
+#booklist a.readMore {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.toplevel ul li a{
+    display:none;
+}
+.toplevel ul li {
+    margin: 0.75em;
+    padding: 0.75em;
+    cursor: pointer;
+    font-size: larger;
+    float: left;
+    display: inline;
+    width: 150px;
+    overflow: hidden;
+    color: #333333;
+    background-color: #ffffff;
+    background-color:#383838;
+    text-align: center;
+}
+
 
 #booklist a {
     text-decoration: none;
@@ -363,7 +386,8 @@ border:1px solid #ddd;
 }
 
 #booklist a.summary_thumb img {
-    border: none
+    border: none;
+    width:100%;
 }
 
 

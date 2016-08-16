@@ -420,8 +420,15 @@ function load_page(elem) {
             this.parent().find('.navmiddle .start').html(this.find('.load_data .start').attr('title'));
             this.parent().find('.navmiddle .end').html(this.find('.load_data .end').attr('title'));
             goto_page();
-            this.find('article').readmore();
-            this.find(".ui-button, .read").button().addClass("btn btn-primary");
+            this.find('article').readmore({
+                moreLink: "<a href='#' class='readMore'>Read More</a>",
+                lessLink: "<a href='#' class='readMore'>Read Less</a>"
+            });
+            this.find(".ui-button, .read").button().addClass("btn btn-block btn-primary");
+            $.each(this.find("img"), function(i) {
+                var src = $(this).attr("src").replace("90_120","180_240");
+                $(this).attr("src", src);
+            });
         }
     });
     $("#booklist .page:visible").hide();
