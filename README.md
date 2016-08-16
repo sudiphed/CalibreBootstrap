@@ -1,7 +1,7 @@
 # CalibreBootstrap
 Bootstrap template for the Calibre Content Server
 
-![Imgur](http://i.imgur.com/AQGbNEh.png)
+![Imgur](http://imgur.com/yUZRhX9)
 
 # Install
 - git clone into ~/.config/calibre/  or copy contents into ~/.config/calibre/
