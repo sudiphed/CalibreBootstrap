@@ -527,6 +527,7 @@ color: #eee;
     float:left;
     padding-right: 20px;
     padding-bottom: 20px;
+    width: 100%;
 }
 
 .details a.details_thumb img {
@@ -534,7 +535,9 @@ color: #eee;
 }
 
 .details #random_button {
-    display:block
+    display:block;
+    margin-top: 25px;
+    width: 90%;
 }
 
 
